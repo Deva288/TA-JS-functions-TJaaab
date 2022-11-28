@@ -8,9 +8,11 @@
   * [ ] Add an additional argument to the function that takes the conversion rate of human to dog years.
 */
 
-function calculateDogAge() {
-  // Your code goes here
+function calculateDogAge(puppyAge, conversion = 7) {
+  return puppyAge * conversion;
 }
+
+console.log(calculateDogAge(10, 7));
 
 /*
 2. 🎖Write a function named calculateMoviesToWatch that:
@@ -19,8 +21,12 @@ function calculateDogAge() {
   * [ ] Return the total number of movie you will watch.
 */
 
-function calculateMoviesToWatch() {
-  // Your code goes here
+function calculateMoviesToWatch(age, noOfMovies) {
+  let MAX_AGE = 70;
+  let totalNumberOfMOvies = 
+      (MAX_AGE - age) * 12 * 4 * noOfMovies;
+
+return totalNumberOfMOvies();
 }
 
 /*
@@ -29,9 +35,12 @@ function calculateMoviesToWatch() {
   * [ ] Convert it to fahrenheit and return "NN°F is NN°C"
 */
 
-function celsiusToFahrenheit() {
-  // Your code goes here
-}
+function celsiusToFahrenheit(tempInCelcius) {
+  let tempInFahrenheit = (tempInCelcius * 9 / 5) + 32;
+  return `${tempInCelcius}°C is ${tempInFahrenheit} °F`;
+  }
+  
+  
 
 /*
 4. 🎖Create a function called fahrenheitToCelsius:
@@ -39,10 +48,10 @@ function celsiusToFahrenheit() {
   * [ ] Convert it to celsius and return "NN°F is NN°C"
 */
 
-function celsiusToFahrenheit() {
-  // Your code goes here
+function fahrenheitToCelsius(tempInFahrenheit) {
+  let tempInCelcius = (tempInFahrenheit - 32) * 5 / 9 ;
+  return `${tempInFahrenheit}°F is ${tempInCelcius}°C `;
 }
-
 /*
 5. 🎖 Write a function pow(n, x) that returns x in power n.
 
@@ -51,8 +60,12 @@ function celsiusToFahrenheit() {
   * [ ] If the value of n is below 0 return "The number below 1 is not allowed"
 */
 
-function pow() {
-  // Your code goes here
+function pow(x, n) {
+  if(n < 0) {
+    return "The number below 1 is not allowed";
+  } else {
+    return x ** n;
+  }
 }
 
 // Test
@@ -66,8 +79,22 @@ pow(-31, 2); // "The number below 1 is not allowed"
 and return sum or product of 1,…,n. If user enters any other value than `sum` or `product` alert `Not a valid Input`.
 */
 
-function sumOrProductOfN() {
-  // Your code goes here
+function sumOrProductOfN(num, operation) {
+  if (operation === "sum") {
+    let sum = 0;
+    for (let i = 1; i <= num; i ++) {
+      sum += i;
+    }
+    return sum;
+  } else if (operation === "product") {
+    let product = 1;
+    for (let i = 1; i <=num; i++) {
+      product *= i;
+  }
+  return product;
+} else {
+  alert("Not a valid input")
+}
 }
 
 sumOrProductOfN(4, 'sum'); // 10
